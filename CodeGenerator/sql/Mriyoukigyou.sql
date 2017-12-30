@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS `Mriyoukigyou` (
+  `RiyoukigyouCD` varchar(10) NOT NULL,
+  `KaishaMei1` varchar(50) DEFAULT NULL,
+  `KaishaMei2` varchar(50) DEFAULT NULL,
+  `KaishaMeiKana` varchar(50) DEFAULT NULL,
+  `YuubinNO` varchar(8) DEFAULT NULL,
+  `Juusho1` varchar(50) DEFAULT NULL,
+  `Juusho2` varchar(50) DEFAULT NULL,
+  `Tel` varchar(13) DEFAULT NULL,
+  `Fax` varchar(13) DEFAULT NULL,
+  `Settoji` varchar(3) DEFAULT NULL,
+  `BumonCD` varchar(6) DEFAULT NULL,
+  `InsertDatetime` datetime DEFAULT NULL,
+  `UpdateDatetime` datetime DEFAULT NULL,
+  `UpdateComputerName` int(11) DEFAULT NULL,
+  `UpdateUserID` varchar(8) DEFAULT NULL,
+  `DeleteFLG` int(11) DEFAULT NULL,
+  `BinJohoFLG` int(11) DEFAULT NULL,
+  `KMS_FLG` int(11) NOT NULL DEFAULT '0' COMMENT 'KMSƒtƒ‰ƒO',
+  PRIMARY KEY (`RiyoukigyouCD`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

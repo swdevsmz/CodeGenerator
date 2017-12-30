@@ -66,7 +66,7 @@ namespace CodeGenerator
 
                 // スーパークラスファイル作成
                 System.IO.StreamWriter sw = new System.IO.StreamWriter(
-                                        Directory.GetCurrentDirectory() + @"\dto\" + className + "BaseDto.vb",
+                                        Directory.GetCurrentDirectory() + @"\dto\cls" + className + "BaseDto.vb",
                                         false,
                                         System.Text.Encoding.GetEncoding("utf-8"));
                 　
@@ -77,7 +77,7 @@ namespace CodeGenerator
 
                 // サブクラスファイル作成
                 System.IO.StreamWriter sw2 = new System.IO.StreamWriter(
-                                        Directory.GetCurrentDirectory() + @"\dto\" + className + "Dto.vb",
+                                        Directory.GetCurrentDirectory() + @"\dto\cls" + className + "Dto.vb",
                                         false,
                                         System.Text.Encoding.GetEncoding("utf-8"));
                 // サブクラス定義
@@ -131,7 +131,17 @@ namespace CodeGenerator
             else if (filedType.Contains("binary"))
             {
                 propertyType = "Boolean";
+            }else if (filedType.Contains("text"))
+            {
+                propertyType = "String";
+            }else if (filedType.Contains("varbinary")){
+                propertyType = "String";
             }
+
+
+
+
+
             return propertyType;
         }
     }
