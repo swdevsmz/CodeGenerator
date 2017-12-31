@@ -10,6 +10,9 @@ namespace CodeGenerator
         static void Main(string[] args)
         {
 
+            Console.Write("aaa");
+
+            
             // SQL(create_sql)ファイル一覧取得
             System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(Directory.GetCurrentDirectory() + @"\sql");
             IEnumerable<System.IO.FileInfo> files = di.EnumerateFiles("*.sql", System.IO.SearchOption.AllDirectories);
@@ -22,7 +25,7 @@ namespace CodeGenerator
                 // スーパークラス定義
                 StringBuilder sb = new StringBuilder();
                 // NameSpace Class 属性作成
-                sb.AppendLine("Namespace app.dto");
+                sb.AppendLine("Namespace app.dto.base");
                 sb.AppendLine(String.Format("    Public Class cls{0}BaseDto", className));
                 sb.AppendLine("        Inherits clsBaseDto");
                 sb.AppendLine();
@@ -66,7 +69,7 @@ namespace CodeGenerator
 
                 // スーパークラスファイル作成
                 System.IO.StreamWriter sw = new System.IO.StreamWriter(
-                                        Directory.GetCurrentDirectory() + @"\dto\cls" + className + "BaseDto.vb",
+                                        Directory.GetCurrentDirectory() + @"\dto\base\cls" + className + "BaseDto.vb",
                                         false,
                                         System.Text.Encoding.GetEncoding("utf-8"));
                 　
@@ -91,13 +94,13 @@ namespace CodeGenerator
                 sb2.AppendLine("End Namespace");
 
                 // サブクラスクラスファイルの書き込み
-                sw2.Write(sb.ToString());
+                sw2.Write(sb2.ToString());
                 //閉じる
                 sw2.Close();
 
-
+    
             }
-
+            
         }
 
         private static string GetPropertyType(string filedType)
