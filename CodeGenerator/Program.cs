@@ -85,7 +85,7 @@ namespace CodeGenerator
                                         System.Text.Encoding.GetEncoding("utf-8"));
                 // サブクラス定義
                 StringBuilder sb2 = new StringBuilder();
-                sb2.AppendLine("Imports KMS版EDIシステム.app.dto.base");
+                sb2.AppendLine("Imports app.dto.base");
                 sb2.AppendLine("");
                 sb2.AppendLine("Namespace app.dto");
                 sb2.AppendLine(String.Format("    Public Class cls{0}", className + "Dto"));
